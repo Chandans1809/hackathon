@@ -42,4 +42,5 @@ public class CodeReviewController {
         List<CodeReview> reviews = codeReviewService.getPendingReviews();
         return ResponseEntity.ok(reviews);
     }
+
 }
