@@ -18,10 +18,7 @@ public class CodeReviewController {
 
 
     @PostMapping
-    public ResponseEntity<CodeReview> submitCode(
-            @RequestParam String fileName,
-            @RequestParam String language,
-            @RequestBody String code) {
+    public ResponseEntity<CodeReview> submitCode(@RequestParam String fileName, @RequestParam String language, @RequestBody String code) {
         CodeReview review = codeReviewService.submitCode(fileName, language, code);
         return ResponseEntity.ok(review);
     }
