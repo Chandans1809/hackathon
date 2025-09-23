@@ -41,6 +41,8 @@ public class CodeReviewController {
 
     @GetMapping("/pending")
     public ResponseEntity<List<CodeReview>> getPendingReviews() {
+
+        System.out.println("Added a new file");
         List<CodeReview> reviews = codeReviewService.getPendingReviews();
         return ResponseEntity.ok(reviews);
     }

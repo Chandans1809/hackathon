@@ -17,17 +17,17 @@ public class CodeReviewService {
 
     public CodeReview submitCode(String fileName, String language, String code) {
         CodeReview codeReview = new CodeReview(fileName, language, code);
-//        codeReview = codeReviewRepository.save(codeReview);
+        codeReview = codeReviewRepository.save(codeReview);
 
 //         Process in background
-//        CodeReview finalCodeReview = codeReview;
+        CodeReview finalCodeReview = codeReview;
         new Thread(() -> {
-            aiAnalysisService.analyzeCode(codeReview);
-            codeReviewRepository.save(codeReview);
+            aiAnalysisService.analyzeCode(finalCodeReview);
+            codeReviewRepository.save(finalCodeReview);
         }).start();
 
 
-        return codeReview;
+        return finalCodeReview;
     }
 
     public List<CodeReview> getAllReviews() {
