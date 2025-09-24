@@ -44,7 +44,8 @@ public class AIAnalysisService {
         codeReview.setFeedback(feedbackList);
         codeReview.setIssuesCount(feedbackList.size());
         codeReview.setSuggestionsCount(feedbackList.size() + random.nextInt(3));
-//        codeReview.setRating(5.0 - (feedbackList.size() * 0.5));
+        codeReview.setRating(5.0 - (feedbackList.size() * 0.5));
+        System.out.println("hello world");
         codeReview.setStatus("COMPLETED");
     }
 }
